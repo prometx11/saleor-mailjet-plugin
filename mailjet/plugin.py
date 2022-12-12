@@ -4,11 +4,11 @@ from typing import Union
 
 from django.core.exceptions import ValidationError
 
-from ...core.notify_events import NotifyEventType, UserNotifyEvent
-from ...plugins.mailjet.tasks import send_email_with_dynamic_template_id
-from ..base_plugin import BasePlugin, ConfigurationTypeField
-from ..error_codes import PluginErrorCode
-from ..models import PluginConfiguration
+from saleor.core.notify_events import NotifyEventType, UserNotifyEvent
+from saleor.plugins.mailjet.tasks import send_email_with_dynamic_template_id
+from saleor.plugins.base_plugin import BasePlugin, ConfigurationTypeField
+from saleor.plugins.error_codes import PluginErrorCode
+from saleor.plugins.models import PluginConfiguration
 from . import MailjetConfiguration
 from .tasks import (
     send_account_confirmation_email_task,

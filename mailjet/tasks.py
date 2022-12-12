@@ -3,12 +3,12 @@ import logging
 from mailjet_rest import Client
 from mailjet_rest.client import ApiError
 
-from ...account import events as account_events
-from ...celeryconf import app
-from ...giftcard import events as gift_card_events
-from ...graphql.core.utils import from_global_id_or_none
-from ...invoice import events as invoice_events
-from ...order import events as order_events
+from saleor.account import events as account_events
+from saleor.celeryconf import app
+from saleor.giftcard import events as gift_card_events
+from saleor.graphql.core.utils import from_global_id_or_none
+from saleor.invoice import events as invoice_events
+from saleor.order import events as order_events
 from . import MailjetConfiguration
 
 logger = logging.getLogger(__name__)
