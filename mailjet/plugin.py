@@ -254,7 +254,7 @@ class MailjetEmailPlugin(BasePlugin):
             # the empty fields means that we should not send an email for this event.
             return previous_value
         
-        logger.info(f"invoking notify event for {json.dumps(payload, indent=4)}")
+        #logger.info(f"invoking notify event for {json.dumps(payload, indent=4)}")
 
         event_task.delay(payload, asdict(self.config))
 
