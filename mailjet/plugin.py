@@ -27,6 +27,7 @@ from .tasks import (
     send_set_user_password_email_task,
     send_user_change_email_notification_task,
 )
+import json
 
 logger = logging.getLogger(__name__)
 
@@ -252,6 +253,8 @@ class MailjetEmailPlugin(BasePlugin):
         if not template_id:
             # the empty fields means that we should not send an email for this event.
             return previous_value
+        
+        logger.info(f"invoking notify event for {json.dumps(payload)}")
 
         event_task.delay(payload, asdict(self.config))
 
